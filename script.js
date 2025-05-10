@@ -165,5 +165,6 @@ function focarNoLocal(indice) {
   mapa.setZoom(17);
   infoWindows[indice].open(mapa, marcador);
 }
+carregarIdioma(detectarIdioma());
 
 window.initMap = initMap;
