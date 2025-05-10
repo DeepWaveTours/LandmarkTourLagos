@@ -56,7 +56,12 @@
   <div class="media-container">
     <a href="index.html" id="voltar">← Voltar ao mapa</a>
     <h1 id="titulo"></h1>
-    <p id="descricao"></p>
+    <section id="descricao-container" style="margin-top:20px; padding:10px 20px; background:#f7f7f7; border-radius:6px;">
+      <h2>Descrição</h2>
+      <p id="descricao"></p>
+    </section>
+
+      
 
     <div class="swiper">
       <div class="swiper-wrapper" id="galeria"></div>
@@ -79,6 +84,20 @@
       const pontos = await resposta.json();
       const ponto = pontos[id];
 
+      try {
+  const descResposta = await fetch(`dados/descricoes/descricao-${id + 1}.txt`);
+  if (!descResposta.ok) {
+    throw new Error("Descrição não encontrada");
+  }
+  const descricaoLonga = await descResposta.text();
+  document.getElementById("descricao").textContent = descricaoLonga;
+} catch (erro) {
+  console.error("Erro ao carregar descrição:", erro);
+  document.getElementById("descricao").textContent = "Descrição não disponível.";
+}
+
+
+
       if (!ponto) {
         document.body.innerHTML = "<h2>Ponto não encontrado.</h2>";
         return;
@@ -89,7 +108,7 @@
       // Atualizar o título e descrição
       document.title = ponto.nome + " – Landmark Tour";
       document.getElementById("titulo").textContent = ponto.nome;
-      document.getElementById("descricao").textContent = ponto.descricao;
+      // document.getElementById("descricao").textContent = ponto.descricao;
 
       // Normalização dos nomes
       function slugify(text) {

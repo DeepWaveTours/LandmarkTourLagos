@@ -36,7 +36,11 @@ async function initMap() {
     locais.forEach((local, i) => {
       // Adiciona item à lista lateral
       const item = document.createElement("li");
-      item.textContent = `${i + 1}. ${local.nome}`;
+      item.innerHTML = `
+  <span class="circulo-numero" data-index="${i}">${i + 1}</span>
+  ${local.nome}
+`;
+
       item.addEventListener("click", () => {
         focarNoLocal(i);
         indiceAtual = i;
@@ -60,7 +64,7 @@ async function initMap() {
     <a href="local.html?id=${i}" style="
       position: absolute;
       top: 0;
-      right: 0;
+      right: 12px;
       background: #4B0082;
       color: white;
       padding: 4px 8px;
@@ -101,9 +105,9 @@ async function initMap() {
       mapa.fitBounds(bounds);
 
       // Aguarda 300ms antes de focar o primeiro ponto
-      setTimeout(() => {
-        focarNoLocal(indiceAtual);
-      }, 300);
+      // setTimeout(() => {
+        // focarNoLocal(indiceAtual);
+      // }, 300);
     });
 
     // Botões
@@ -137,16 +141,29 @@ function atualizarIcones(indiceAtivo) {
   });
 }
 
+function destacarItemLista(indiceAtivo) {
+  const itens = document.querySelectorAll("#lista-pontos li");
+  itens.forEach((li, i) => {
+    if (i === indiceAtivo) {
+      li.classList.add("item-ativo");
+    } else {
+      li.classList.remove("item-ativo");
+    }
+  });
+}
+
+
 function focarNoLocal(indice) {
   fecharInfoWindows();
   atualizarIcones(indice);
+  destacarItemLista(indice); // <--- chamada aqui!
+
   const local = locais[indice];
   const marcador = marcadores[indice];
-
+  
   mapa.panTo({ lat: local.latitude, lng: local.longitude });
   mapa.setZoom(17);
   infoWindows[indice].open(mapa, marcador);
 }
-
 
 window.initMap = initMap;
