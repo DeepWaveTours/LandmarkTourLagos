@@ -17,6 +17,7 @@ function gerarIcone(numero, corFundo = "#e68a00", corTexto = "#ffffff", raio = 1
     labelOrigin: new google.maps.Point(raio, raio / 1.5)
   };
 }
+const lang = navigator.language.slice(0, 2) || "pt";
 
 async function initMap() {
   mapa = new google.maps.Map(document.getElementById("map"), {
