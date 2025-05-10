@@ -73,7 +73,7 @@ async function initMap() {
       font-size: 13px;
     ">Ver mais</a>
     <h3>${local.nome}</h3>
-    <p>${local.descricao}</p>
+    <p>${local.descricao[lang] || local.descricao["pt"]}</p>
     </div>
 `;
 
