@@ -1,0 +1,67 @@
+[
+  
+  {
+    "nome": "Forte da Ponta da Bandeira",
+    "descricao": "Um marco histórico localizado em Lagos.",
+    "latitude": 37.098927,
+    "longitude": -8.668308,
+    "imagem": "media/forte-ponta-bandeira.jpg",
+    "video": "https://www.youtube.com/embed/Bbzn27qqHJM",
+    "audio": "media/forte.mp3"
+  },
+  {
+    "nome": "Cais da Solaria",
+    "descricao": "Um marco histórico localizado em Lagos.",
+    "latitude": 37.098710,
+    "longitude": -8.666766,
+    "imagem": "media/cais-solaria.jpg",
+    "video": "https://www.youtube.com/embed/Bbzn27qqHJM",
+    "audio": "media/forte.mp3"
+  },
+  {
+    "nome": "Miradouro da Praia da Batata",
+    "descricao": "Um marco histórico localizado em Lagos.",
+    "latitude": 37.098071,
+    "longitude": -8.668466,
+    "imagem": "media/miradouro-praia-batata.jpg",
+    "video": "https://www.youtube.com/embed/Bbzn27qqHJM",
+    "audio": "media/forte.mp3"
+  },
+  {
+    "nome": "Castelo de Lagos",
+    "descricao": "Um marco histórico localizado em Lagos.",
+    "latitude": 37.099796,
+    "longitude": -8.669863,
+    "imagem": "media/castelo-governadores-lagos.jpg",
+    "video": "https://www.youtube.com/embed/Bbzn27qqHJM",
+    "audio": "media/forte.mp3"
+  },
+  {
+    "nome": "Jardim da Constituição",
+    "descricao": "Um marco histórico localizado em Lagos.",
+    "latitude": 37.100389,
+    "longitude": -8.670036,
+    "imagem": "media/jardim-constituicao-lagos.jpg",
+    "video": "https://www.youtube.com/embed/Bbzn27qqHJM",
+    "audio": "media/forte.mp3"
+  },
+  {
+    "nome": "Igreja de Santa Maria de Lagos",
+    "descricao": "Um marco histórico localizado em Lagos.",
+    "latitude": 37.100089,
+    "longitude": -8.670594,
+    "imagem": "media/igreja-santa-maria-lagos.jpg",
+    "video": "https://www.youtube.com/embed/Bbzn27qqHJM",
+    "audio": "media/forte.mp3"
+  },
+  {
+    "nome": "Mercado Municipal de Lagos",
+    "descricao": "Um marco histórico localizado em Lagos.",
+    "latitude": 37.104191,
+    "longitude": -8.673097,
+    "imagem": "media/mercado-municipal-lagos.jpg",
+    "video": "https://www.youtube.com/embed/Bbzn27qqHJM",
+    "audio": "media/forte.mp3"
+  }
+]
+  
