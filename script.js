@@ -31,7 +31,13 @@ async function initMap() {
 
   // Torna visível o mapa só depois de carregado
     document.getElementById("map-container").style.visibility = "visible";
-  
+
+    const idiomasSuportados = ["pt", "en", "fr", "de", "es"];
+    let lang = localStorage.getItem("lang") || navigator.language.slice(0, 2);
+    if (!idiomasSuportados.includes(lang)) lang = "pt";
+
+    document.getElementById("lang-select").value = lang;
+
     try {
     const resposta = await fetch('dados/pontos.json');
     locais = await resposta.json();
@@ -173,9 +179,4 @@ function focarNoLocal(indice) {
   infoWindows[indice].open(mapa, marcador);
 }
 
-document.getElementById("lang-select").value = lang;
-
 window.initMap = initMap;
-
-
-
