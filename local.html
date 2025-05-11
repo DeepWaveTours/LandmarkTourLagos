@@ -130,11 +130,13 @@
 
       try {
         const descResp = await fetch(`dados/descricoes/descricao-${id + 1}-${lang}.txt`);
+        if (!descResp.ok) throw new Error();
         const descLonga = await descResp.text();
         document.getElementById("descricao").textContent = descLonga;
       } catch (e) {
         document.getElementById("descricao").textContent = traducoes[lang].descricao + " não disponível.";
       }
+
     }
 
     carregarDetalhes();
