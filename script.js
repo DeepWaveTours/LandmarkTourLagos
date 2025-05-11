@@ -4,6 +4,12 @@ let infoWindows = [];
 let locais = [];
 let indiceAtual = 0;
 
+
+function mudarIdioma(novoIdioma) {
+  localStorage.setItem("lang", novoIdioma);
+  location.reload(); // recarrega a página com a nova língua
+}
+
 function gerarIcone(numero, corFundo = "#e68a00", corTexto = "#ffffff", raio = 16) {
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${raio * 2}" height="${raio * 2}">
@@ -17,7 +23,6 @@ function gerarIcone(numero, corFundo = "#e68a00", corTexto = "#ffffff", raio = 1
     labelOrigin: new google.maps.Point(raio, raio / 1.5)
   };
 }
-const lang = navigator.language.slice(0, 2) || "pt";
 
 async function initMap() {
   mapa = new google.maps.Map(document.getElementById("map"), {
@@ -40,7 +45,7 @@ async function initMap() {
       item.innerHTML = `
   <span class="circulo-numero" data-index="${i}">${i + 1}</span>
   ${local.nome}
-`;
+  `;
 
       item.addEventListener("click", () => {
         focarNoLocal(i);
@@ -76,7 +81,8 @@ async function initMap() {
     <h3>${local.nome}</h3>
     <p>${local.descricao[lang] || local.descricao["pt"]}</p>
     </div>
-`;
+  `;
+      
 
       if (local.imagem) {
         conteudo += `<img src="${local.imagem}" style="max-width:100%;margin-top:5px;">`;
@@ -166,6 +172,10 @@ function focarNoLocal(indice) {
   mapa.setZoom(17);
   infoWindows[indice].open(mapa, marcador);
 }
-carregarIdioma(detectarIdioma());
+
+document.getElementById("lang-select").value = lang;
 
 window.initMap = initMap;
+
+
+
