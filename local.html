@@ -51,12 +51,27 @@
       padding: 8px 14px;
       border-radius: 5px;
       font-weight: bold;
+      font-size: 12px;
     }
 
-    section#descricao-container {
+    #descricao-container {
       background: #f7f7f7;
+      padding: 16px 24px;
       border-radius: 6px;
-      padding: 10px 20px;
+      margin-top: 24px;
+    }
+
+    #descricao-titulo {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    #descricao {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
     }
 
     @media (max-width: 768px) {
@@ -74,7 +89,7 @@
 <body>
   <div class="media-container">
     <a href="index.html" id="voltar">← Voltar ao mapa</a>
-    <h1 id="titulo"></h1>
+    <h2 id="titulo"></h2>
 
     <section id="descricao-container">
       <h2 id="descricao-titulo">Descrição</h2>
